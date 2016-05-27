@@ -1,9 +1,12 @@
 {
   "name": "swaggins",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Swaggins serves Swagger docs from your integration tests, no need to maintain both, because YOLO.",
   "main": "index.js",
   "bin": "cli.js",
+  "keywords": [
+    "swagger", "testing", "integration", "documentation", "api"
+  ],
   "scripts": {},
   "repository": "https://github.com/lazywithclass/swaggins",
   "author": "me@lazywithclass.com",
