@@ -1,0 +1,21 @@
+{
+  "name": "swaggins",
+  "version": "0.0.1",
+  "description": "Swaggins serves Swagger docs from your integration tests, no need to maintain both, because YOLO.",
+  "main": "index.js",
+  "bin": "cli.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "request": "^2.72.0"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "http-server": "^0.9.0",
+    "shelljs": "^0.7.0"
+  }
+}
