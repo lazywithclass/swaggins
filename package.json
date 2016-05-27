@@ -5,8 +5,9 @@
   "main": "index.js",
   "bin": "cli.js",
   "scripts": {},
-  "author": "",
-  "license": "ISC",
+  "repository": "https://github.com/lazywithclass/swaggins",
+  "author": "me@lazywithclass.com",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
     "express": "^4.13.4",
