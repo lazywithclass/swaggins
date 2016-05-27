@@ -4,7 +4,9 @@ require('shelljs/global');
 var program = require('commander');
 
 
-program.version(require('./package.json').version)
+program
+  .version(require('./package.json').version)
+  .parse(process.argv);
 
 program
   .command('clean')
@@ -28,7 +30,5 @@ program
   .action(function(env, options){
     exec('http-server --cors');
   });
-
-program.parse(process.argv);
 
 if (!program.args || !program.args.length) program.help();
