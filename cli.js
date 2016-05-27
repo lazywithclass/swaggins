@@ -3,25 +3,24 @@
 require('shelljs/global');
 var program = require('commander');
 
+var docsFolder = process.cwd() + '/docs';
 
-program
-  .version(require('./package.json').version)
-  .parse(process.argv);
+program.version(require('./package.json').version)
 
 program
   .command('clean')
   .description('remove the docs folder')
   .action(function(env, options){
-    rm('-rf', 'docs');
+    rm('-rf', docsFolder);
   });
 
 program
   .command('doc')
   .description('prepares the docs folder')
   .action(function(env, options){
-    mkdir('-p', 'docs');
-    cp('-r', __dirname + '/lib/swagger-ui/*', 'docs');
-    cp('api.json', 'docs');
+    mkdir('-p', docsFolder);
+    cp('-r', __dirname + '/lib/swagger-ui/*', docsFolder);
+    cp('./swagger.json', docsFolder);
   });
 
 program
@@ -30,5 +29,7 @@ program
   .action(function(env, options){
     exec('http-server --cors');
   });
+
+program.parse(process.argv);
 
 if (!program.args || !program.args.length) program.help();
