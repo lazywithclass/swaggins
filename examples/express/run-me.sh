@@ -1,6 +1,8 @@
 #!/bin/bash
 
-:>swagger.json
+
+../../cli.js clean &>/dev/null
+touch swagger.json
 
 node server.js &>/dev/null &
 # give time to the server to come up
@@ -8,6 +10,9 @@ node server.js &>/dev/null &
 sleep 2
 pid=$!
 
-../../node_modules/.bin/mocha test.js # &>/dev/null
+../../node_modules/.bin/mocha test.js
+
+../../cli.js doc
+../../cli.js serve
 
 kill $pid

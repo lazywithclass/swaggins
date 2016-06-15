@@ -1,7 +1,0 @@
-{
-  "paths": {
-    "/answer/everything": {
-      "GET": {}
-    }
-  }
-}

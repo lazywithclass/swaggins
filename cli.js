@@ -20,7 +20,7 @@ program
   .action(function(env, options){
     mkdir('-p', docsFolder);
     cp('-r', __dirname + '/lib/swagger-ui/*', docsFolder);
-    cp('./swagger.json', docsFolder);
+    mv('./swagger.json', docsFolder);
   });
 
 program
