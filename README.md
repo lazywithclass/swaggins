@@ -4,9 +4,7 @@ Swaggins serves Swagger docs from your integration tests, no need to maintain bo
 
 ### How
 
-Swaggins extract useful information for your Swagger docs from the
-`res` object, so it provides a wrapper that your can use in your
-tests to give it the information it needs.
+Swaggins extracts useful information for your [Swagger](http://swagger.io/) docs from Node.js HTTP `res` object.
 
 ### Install
 
@@ -20,22 +18,40 @@ use `swaggins` from the CLI.
 Have a look at [the express example](https://github.com/lazywithclass/swaggins/tree/master/examples/express)
 but ideally you would have to do the following steps
 
- * [configure-your-tests](#configure-your-tests)
- * [run your tests](#run-your-tests), you get the JSON swagger definition
+ * [configure your tests](#configure-your-tests)
+ * [run your tests](#run-your-tests), so you get the JSON swagger definition
  * [prepare the docs folder](#prepare-the-docs-folder) with the JSON
  * [serve](#serve) your docs
 
 #### Configure your tests
 
-All swaggins needs is a wrapper around the `res` object, so your
-tests might look something like this
+There are two ways to do so:
+
+ * [`probe`](#probe): proxying Node.js `http.request` once at the top of your test
+ * `extract`: passing `res` everytime you need
+
+##### probe
+
+Include this line at the top of your test and you're good to go:
 
 ```javascript
+require('../../index').probe();
+```
+
+[Example](https://github.com/lazywithclass/swaggins/tree/master/examples/express/test-with-probe.js)
+
+##### extract
+
+Pass `res` only where you need:
+
+```javascript
+var extract = require('../../index').extract;
+
 it('answers to /answer with 42', function(done) {
   request(
     'http://localhost:3000/answer/everything',
     function cb(err, res, body) {
-      extract(res); <--- this is where we use swaggins
+      extract(res); <--- here is where we use swaggins
       expect(body).to.equal('42');
       done();
     }
@@ -43,13 +59,13 @@ it('answers to /answer with 42', function(done) {
 });
 ```
 
-The [complete example](https://github.com/lazywithclass/swaggins/blob/master/examples/express/test.js) is in the examples folder.
+[Example](https://github.com/lazywithclass/swaggins/blob/master/examples/express/test-with-extract.js)
 
 #### Run your tests
 
 In the examples folder I've provided a [very basic example](https://github.com/lazywithclass/swaggins/blob/master/examples/express/run-me.sh),
-swaggins expects you to run your integration tests against
-a real server, so that it can get the real response and extract the info
+Swaggins expects you to run your integration tests against
+a real server, so that it can get `res` and extract the information.
 
 #### Prepare the docs folder
 
@@ -59,7 +75,7 @@ At this point I assume you have the JSON definition, so just run
 $ swaggins doc
 ```
 
-to get your JSON and swagger-ui in `docs/`.
+to get your JSON definition and swagger-ui in `docs/`.
 
 #### Serve
 
