@@ -5,7 +5,11 @@
   "main": "index.js",
   "bin": "cli.js",
   "keywords": [
-    "swagger", "testing", "integration", "documentation", "api"
+    "swagger",
+    "testing",
+    "integration",
+    "documentation",
+    "api"
   ],
   "scripts": {},
   "repository": "https://github.com/lazywithclass/swaggins",
@@ -20,6 +24,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "http-server": "^0.9.0",
-    "shelljs": "^0.7.0"
+    "shelljs": "^0.7.0",
+    "touch": "^1.0.0"
   }
 }

@@ -1,8 +1,24 @@
 var collect = require('./lib/collect'),
-    swaggerAdaptor = require('./lib/swagger');
+    swagger = require('./lib/swagger'),
+    http = require('http');
 
 
-exports.extract = (res) => {
+var write = (res) => {
   var collected = collect(res);
-  swaggerAdaptor.write(collected);
+  swagger.write(collected);
+};
+
+exports.extract = write;
+
+exports.probe = () => {
+  var httpRequest = http.request;
+  http.request = function(options, callback) {
+    function interceptor() {
+      var res = arguments[0].req.res;
+      write(res);
+
+      if (callback) callback();
+    }
+    return httpRequest.apply(http, [options, interceptor]);
+  };
 };
