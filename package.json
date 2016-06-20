@@ -11,7 +11,9 @@
     "documentation",
     "api"
   ],
-  "scripts": {},
+  "scripts": {
+    "test": "make --silent --ignore-errors test"
+  },
   "repository": "https://github.com/lazywithclass/swaggins",
   "author": "me@lazywithclass.com",
   "license": "MIT",
