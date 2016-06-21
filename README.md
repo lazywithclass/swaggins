@@ -28,7 +28,7 @@ but ideally you would have to do the following steps
 There are two ways to do so:
 
  * [`probe`](#probe): proxying Node.js `http.request` once at the top of your test
- * `extract`: passing `res` everytime you need
+ * [`extract`](#extract): passing `res` everytime you need
 
 ##### probe
 
@@ -38,7 +38,7 @@ Include this line at the top of your test and you're good to go:
 require('../../index').probe();
 ```
 
-[Example](https://github.com/lazywithclass/swaggins/tree/master/examples/express/test-with-probe.js)
+[Example](https://github.com/lazywithclass/swaggins/tree/master/examples/express/test-with-probe.js#L4)
 
 ##### extract
 
@@ -59,7 +59,7 @@ it('answers to /answer with 42', function(done) {
 });
 ```
 
-[Example](https://github.com/lazywithclass/swaggins/blob/master/examples/express/test-with-extract.js)
+[Example](https://github.com/lazywithclass/swaggins/blob/master/examples/express/test-with-extract.js#L12)
 
 #### Run your tests
 
