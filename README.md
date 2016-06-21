@@ -1,6 +1,8 @@
-# swaggins
+# swaggins [v0.1.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#010)
 
-Swaggins serves Swagger docs from your integration tests, no need to maintain both, because YOLO.
+Serve Swagger docs from your integration tests, no need to maintain both, because YOLO.
+
+[![Dependency Status](https://david-dm.org/lazywithclass/swaggins.svg)](https://david-dm.org/lazywithclass/swaggins) [![dev dependencies](https://david-dm.org/lazywithclass/swaggins/dev-status.svg)](https://david-dm.org/lazywithclass/swaggins#info=devDependencies) [![peer dependencies](https://david-dm.org/lazywithclass/swaggins/peer-status.svg)](https://david-dm.org/lazywithclass/swaggins#info=peerDependencies)
 
 ### How
 
