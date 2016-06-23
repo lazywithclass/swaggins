@@ -40,6 +40,8 @@ Include this line at the top of your test and you're good to go:
 require('../../index').probe();
 ```
 
+It makes sense to include it just once for all your test, it proxies `http.request` so there's no reason to do it twice.
+
 [Example](https://github.com/lazywithclass/swaggins/tree/master/examples/express/test-with-probe.js#L4)
 
 ##### extract
