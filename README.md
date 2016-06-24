@@ -37,7 +37,7 @@ There are two ways to do so:
 Include this line at the top of your test and you're good to go:
 
 ```javascript
-require('../../index').probe();
+require('swaggins').probe();
 ```
 
 It makes sense to include it just once for all your test, it proxies `http.request` so there's no reason to do it twice.
@@ -49,7 +49,7 @@ It makes sense to include it just once for all your test, it proxies `http.reque
 Pass `res` only where you need:
 
 ```javascript
-var extract = require('../../index').extract;
+var extract = require('swaggins').extract;
 
 it('answers to /answer with 42', function(done) {
   request(
