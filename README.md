@@ -1,4 +1,4 @@
-# swaggins [v0.3.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#030)
+# swaggins [v0.4.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#040)
 
 Serve Swagger docs from your integration tests, no need to maintain both, because YOLO.
 
@@ -86,5 +86,12 @@ to get your JSON definition and swagger-ui in `docs/`.
 Show your API docs
 
 ```bash
-$ swaggins serve
+$ swaggins serve [port]
 ```
+
+This will run the server on port 8080, if you want to change that just pass the port as argument
+
+```bash
+$ swaggins serve 3000 
+```
+

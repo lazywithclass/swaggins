@@ -1,3 +1,7 @@
+### 0.4.0
+
+Added the chance to pass the port as param
+
 ### 0.3.0
 
 Handling array and objects together

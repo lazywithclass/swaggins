@@ -24,10 +24,14 @@ program
   });
 
 program
-  .command('serve')
+  .command('serve [port]')
   .description('serves the docs folder')
-  .action(function(env, options){
-    exec('http-server --cors');
+  .action(function(port){
+    console.log(port)
+    var command = port ?
+          './node_modules/.bin/http-server --cors -p ' + port :
+          './node_modules/.bin/http-server --cors'
+    exec(command);
   });
 
 program.parse(process.argv);
