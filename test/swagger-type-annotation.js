@@ -58,7 +58,8 @@ describe('swagger-type-annotation', function() {
           expected = {
             type: 'array',
             items: {
-              type: 'string'
+              type: 'string',
+              example: 'parzival'
             }
           };
 
@@ -70,7 +71,8 @@ describe('swagger-type-annotation', function() {
           expected = {
             type: 'array',
             items: {
-              type: 'number'
+              type: 'number',
+              example: 1
             }
           };
 
@@ -78,15 +80,22 @@ describe('swagger-type-annotation', function() {
     });
 
     it('handles array of objects', function() {
-      var input = [
-        { rank: 1, nickname: 'parzival' },
-        { rank: 2, nickname: 'art3mis' }
-      ];
+      var input = [{ rank: 1, nickname: 'parzival' }];
       var result = lib.array(input),
           expected = {
             type: 'array',
             items: {
-              type: 'object'
+              type: 'object',
+              properties: {
+                rank: {
+                  type: 'number',
+                  example: 1
+                },
+                nickname: {
+                  type: 'string',
+                  example: 'parzival'
+                }
+              }
             }
           };
 
@@ -136,13 +145,11 @@ describe('swagger-type-annotation', function() {
 
     it('handles array', function() {
       var input = {
-        "document": {
-          "data": [
-            {
-              "answer": 42
-            }
-          ],
-          "name": "question"
+        document: {
+          data: [{
+            answer: 42
+          }],
+          name: 'question'
         }
       };
       var result = lib.object(input),
@@ -150,19 +157,26 @@ describe('swagger-type-annotation', function() {
             document: {
               type: 'object',
               properties: {
-                data: {
-                  type: 'array',
-                  items: {
-                    type: 'object'
-                  }
-                },
                 name: {
                   type: 'string',
                   example: 'question'
+                },
+                data: {
+                  type: 'array',
+                  items: {
+                    type: 'object',
+                    properties: {
+                      answer: {
+                        type: 'number',
+                        example: 42
+                      }
+                    }
+                  }
                 }
               }
             }
           };
+
       expect(result.properties).to.deep.equal(expected);
     });
 

@@ -1,4 +1,4 @@
-# swaggins [v0.2.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#020)
+# swaggins [v0.3.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#030)
 
 Serve Swagger docs from your integration tests, no need to maintain both, because YOLO.
 

@@ -1,6 +1,6 @@
 {
   "name": "swaggins",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Swaggins serves Swagger docs from your integration tests, no need to maintain both, because YOLO.",
   "main": "index.js",
   "bin": "cli.js",
@@ -26,6 +26,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "http-server": "^0.9.0",
+    "lodash": "^4.13.1",
     "shelljs": "^0.7.0",
     "touch": "^1.0.0"
   }

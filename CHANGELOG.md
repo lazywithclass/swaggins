@@ -1,3 +1,7 @@
+### 0.3.0
+
+Handling array and objects together
+
 ### 0.2.0
 
 Handling schema representation syntax
