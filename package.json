@@ -1,6 +1,6 @@
 {
   "name": "swaggins",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Swaggins serves Swagger docs from your integration tests, no need to maintain both, because YOLO.",
   "main": "index.js",
   "bin": "cli.js",

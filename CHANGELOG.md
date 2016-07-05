@@ -1,3 +1,7 @@
+### 0.5.0
+
+Added custom headers to add more informations to the documentation
+
 ### 0.4.0
 
 Added the chance to pass the port as param

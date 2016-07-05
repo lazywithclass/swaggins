@@ -27,7 +27,6 @@ program
   .command('serve [port]')
   .description('serves the docs folder')
   .action(function(port){
-    console.log(port)
     var command = port ?
           './node_modules/.bin/http-server --cors -p ' + port :
           './node_modules/.bin/http-server --cors'

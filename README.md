@@ -1,4 +1,4 @@
-# swaggins [v0.4.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#040)
+# swaggins [v0.5.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#050)
 
 Serve Swagger docs from your integration tests, no need to maintain both, because YOLO.
 
@@ -31,6 +31,13 @@ There are two ways to do so:
 
  * [`probe`](#probe): proxying Node.js `http.request` once at the top of your test
  * [`extract`](#extract): passing `res` everytime you need
+
+If you need to pass in extra information that you want to be added to the documentation
+you could use the following headers:
+
+ * `x-swaggins-endpoint-description` - the endpoint description, will be at the top under "Implementation Notes"
+ * `x-swaggins-status-description` - the status description, will be under "Response Class"
+ * `x-swaggins-tag` - dictates in which group this endpoint will fall into
 
 ##### probe
 
@@ -86,12 +93,11 @@ to get your JSON definition and swagger-ui in `docs/`.
 Show your API docs
 
 ```bash
-$ swaggins serve [port]
+$ swaggins serve
 ```
 
 This will run the server on port 8080, if you want to change that just pass the port as argument
 
 ```bash
-$ swaggins serve 3000 
+$ swaggins serve 3000
 ```
-
