@@ -13,7 +13,9 @@ Swaggins extracts useful information for your [Swagger](http://swagger.io/) docs
 `-g` is optional, you might want to do it for when you
 use `swaggins` from the CLI.
 
-`npm install swaggins`
+```bash
+$ npm install swaggins
+```
 
 ### Usage
 
