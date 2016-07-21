@@ -1,3 +1,7 @@
+### 0.6.0
+
+Added chance to ignore a call using a header
+
 ### 0.5.1
 
 Fixed bug that resulted in overridden POSTs

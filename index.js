@@ -9,7 +9,13 @@ exports.probe = () => {
   http.request = function(options, callback) {
     function interceptor() {
 
-      var res = arguments[0].req.res;
+      var res = arguments[0].req.res,
+          req = arguments[0].req;
+
+      if (req._headers['x-swaggins-ignore']) {
+        if (callback) return callback.apply(null, arguments);
+        return;
+      }
 
       // TODO does this work only for GETs?
       var chunks = '';

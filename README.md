@@ -1,4 +1,4 @@
-# swaggins [v0.5.1](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#051)
+# swaggins [v0.6.0](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#060)
 
 Serve Swagger docs from your integration tests, no need to maintain both, because YOLO.
 
@@ -40,6 +40,8 @@ you could use the following headers:
  * `x-swaggins-endpoint-description` - the endpoint description, will be at the top under "Implementation Notes"
  * `x-swaggins-status-description` - the status description, will be under "Response Class"
  * `x-swaggins-tag` - dictates in which group this endpoint will fall into
+
+If you want to ignore a call just add `x-swaggins-ignore` to your headers.
 
 ##### probe
 
