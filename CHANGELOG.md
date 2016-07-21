@@ -1,3 +1,7 @@
+### 0.5.1
+
+Fixed bug that resulted in overridden POSTs
+
 ### 0.5.0
 
 Added custom headers to add more informations to the documentation
