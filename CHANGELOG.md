@@ -1,3 +1,7 @@
+### 0.7.0
+
+Added customisable URL path
+
 ### 0.6.0
 
 Added chance to ignore a call using a header
