@@ -1,3 +1,7 @@
+### 0.7.1
+
+Fixed headers filter
+
 ### 0.7.0
 
 Added customisable URL path
