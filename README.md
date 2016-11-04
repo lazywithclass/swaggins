@@ -8,6 +8,15 @@ Serve Swagger docs from your integration tests, no need to maintain both, becaus
 
 Swaggins extracts useful information for your [Swagger](http://swagger.io/) docs from Node.js HTTP `res` object.
 
+Information extracted includes:
+
+ * `path` of the endpoint
+ * `method`(s) that the endpoint supports
+ * `statusCode` returned by the call to the endpoint
+ * `body` either passed to the endpoint (via POST) for example, or received from the endpoint
+ 
+Have a look at an [example of the generated documentation](http://lazywithclass.github.io/swaggins/examples/express/docs).
+
 ### Install
 
 `-g` is optional, you might want to do it for when you
