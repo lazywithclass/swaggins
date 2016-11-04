@@ -10,10 +10,10 @@ node server.js &>/dev/null &
 sleep 2
 pid=$!
 
-../../node_modules/.bin/mocha test-with-extract.js
-# ../../node_modules/.bin/mocha test-with-probe.js
+# ../../node_modules/.bin/mocha test-with-extract.js
+../../node_modules/.bin/mocha test-with-probe.js
 
 ../../cli.js doc
-../../cli.js serve
+../../cli.js serve 7331
 
 kill $pid

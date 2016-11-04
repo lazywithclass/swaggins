@@ -6,6 +6,6 @@ app.get('/answer/:about', function (req, res) {
   else res.send(404);
 });
 
-app.listen(3000, function () {
+app.listen(1337, function () {
   console.log('Example app listening on port 3000!');
 });
