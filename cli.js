@@ -28,8 +28,8 @@ program
   .description('serves the docs folder')
   .action(function(port){
     var command = port ?
-          './node_modules/.bin/http-server --cors -p ' + port :
-          './node_modules/.bin/http-server --cors'
+          __dirname + '/node_modules/.bin/http-server --cors -p ' + port :
+          __dirname + '/node_modules/.bin/http-server --cors'
     exec(command);
   });
 
