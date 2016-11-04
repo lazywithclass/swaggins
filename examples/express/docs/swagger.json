@@ -1,0 +1,25 @@
+{
+  "swagger": "2",
+  "info": {
+    "version": "?.?.?",
+    "title": ""
+  },
+  "paths": {
+    "/answer/everything": {
+      "get": {
+        "responses": {
+          "200": {
+            "headers": {
+              "content-type": {
+                "type": "string",
+                "example": "text/html; charset=utf-8"
+              }
+            }
+          }
+        },
+        "parameters": []
+      }
+    }
+  },
+  "definitions": {}
+}
