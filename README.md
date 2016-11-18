@@ -1,6 +1,6 @@
 # swaggins [v0.7.1](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#071)
 
-Serve Swagger docs from your integration tests, no need to maintain both, because YOLO.
+Have a look at an [**auto generated example Swagger doc**](http://lazywithclass.github.io/swaggins/examples/express/docs), no manual changes required!
 
 [![Dependency Status](https://david-dm.org/lazywithclass/swaggins.svg)](https://david-dm.org/lazywithclass/swaggins) [![dev dependencies](https://david-dm.org/lazywithclass/swaggins/dev-status.svg)](https://david-dm.org/lazywithclass/swaggins#info=devDependencies) [![peer dependencies](https://david-dm.org/lazywithclass/swaggins/peer-status.svg)](https://david-dm.org/lazywithclass/swaggins#info=peerDependencies)
 
@@ -14,8 +14,6 @@ Information extracted includes:
  * `method`(s) that the endpoint supports
  * `statusCode` returned by the call to the endpoint
  * `body` either passed to the endpoint (via POST) for example, or received from the endpoint
- 
-Have a look at an [example of the generated documentation](http://lazywithclass.github.io/swaggins/examples/express/docs).
 
 ### Install
 
