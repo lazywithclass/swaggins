@@ -5,7 +5,7 @@
     "title": ""
   },
   "paths": {
-    "/answer/everything": {
+    "/answer/{about}": {
       "get": {
         "responses": {
           "200": {
@@ -17,9 +17,268 @@
             }
           }
         },
-        "parameters": []
+        "parameters": [],
+        "description": "The answer to life the universe and everything",
+        "tags": [
+          "answer"
+        ]
+      }
+    },
+    "/answer/math": {
+      "post": {
+        "responses": {
+          "200": {
+            "headers": {
+              "content-type": {
+                "type": "string",
+                "example": "application/json; charset=utf-8"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/.answer.math-post-res"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/definitions/.answer.math-post-req"
+            }
+          }
+        ],
+        "description": "Evaluate your math expressions",
+        "tags": [
+          "answer"
+        ]
+      }
+    },
+    "/db/{id}": {
+      "post": {
+        "responses": {
+          "201": {
+            "headers": {
+              "content-type": {
+                "type": "string",
+                "example": "application/json; charset=utf-8"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/.db-post-res"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/definitions/.db-post-req"
+            }
+          }
+        ],
+        "description": "Add an item to the database",
+        "tags": [
+          "db"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "headers": {
+              "content-type": {
+                "type": "string",
+                "example": "application/json; charset=utf-8"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/.db.1-get-res"
+            }
+          }
+        },
+        "parameters": [],
+        "description": "Get an item from the database",
+        "tags": [
+          "db"
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "headers": {
+              "content-type": {
+                "type": "string",
+                "example": "application/json; charset=utf-8"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/.db.1-put-res"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/definitions/.db.1-put-req"
+            }
+          }
+        ],
+        "description": "Update an item in the database",
+        "tags": [
+          "db"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "headers": {
+              "content-type": {
+                "type": "string",
+                "example": "application/json; charset=utf-8"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/.db.1-delete-res"
+            }
+          }
+        },
+        "parameters": [],
+        "description": "Delete an item from the database",
+        "tags": [
+          "db"
+        ]
+      }
+    },
+    "/db": {
+      "get": {
+        "responses": {
+          "200": {
+            "headers": {
+              "content-type": {
+                "type": "string",
+                "example": "application/json; charset=utf-8"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/.db-get-res"
+            }
+          }
+        },
+        "parameters": [],
+        "description": "Return the whole database",
+        "tags": [
+          "db"
+        ]
       }
     }
   },
-  "definitions": {}
+  "definitions": {
+    ".answer.math-post-req": {
+      "type": "object",
+      "properties": {
+        "expressions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "1 + 1 + 1"
+          }
+        }
+      }
+    },
+    ".answer.math-post-res": {
+      "properties": {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "example": 3
+        }
+      }
+    },
+    ".db-post-req": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "number",
+              "example": 1
+            },
+            "value": {
+              "type": "number",
+              "example": 2
+            }
+          }
+        }
+      }
+    },
+    ".db-post-res": {
+      "properties": {
+        "newitem": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "number",
+              "example": 1
+            },
+            "value": {
+              "type": "number",
+              "example": 2
+            }
+          }
+        }
+      }
+    },
+    ".db.1-get-res": {
+      "properties": {
+        "item": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "number",
+              "example": 1
+            },
+            "value": {
+              "type": "number",
+              "example": 2
+            }
+          }
+        }
+      }
+    },
+    ".db.1-put-req": {
+      "type": "object",
+      "properties": {
+        "newvalue": {
+          "type": "number",
+          "example": 3
+        }
+      }
+    },
+    ".db.1-put-res": {
+      "properties": {
+        "item": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "number",
+              "example": 1
+            },
+            "value": {
+              "type": "number",
+              "example": 3
+            }
+          }
+        }
+      }
+    },
+    ".db.1-delete-res": {
+      "properties": {}
+    },
+    ".db-get-res": {
+      "properties": {
+        "items": {
+          "type": "object",
+          "properties": {}
+        }
+      }
+    }
+  }
 }

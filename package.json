@@ -18,6 +18,7 @@
   "author": "me@lazywithclass.com",
   "license": "MIT",
   "devDependencies": {
+    "body-parser": "^1.15.2",
     "chai": "^3.5.0",
     "express": "^4.13.4",
     "mocha": "^2.4.5",
