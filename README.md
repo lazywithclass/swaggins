@@ -1,6 +1,6 @@
 # swaggins [v0.7.1](https://github.com/lazywithclass/swaggins/blob/master/CHANGELOG.md#071)
 
-Have a look at an [**auto generated example Swagger doc**](http://lazywithclass.github.io/swaggins/examples/express/docs), no manual changes required!
+Have a look at an [**auto generated example Swagger doc**](http://lazywithclass.github.io/swaggins/examples/express/docs/#!/db/post_db_id), no manual changes required!
 
 [![Dependency Status](https://david-dm.org/lazywithclass/swaggins.svg)](https://david-dm.org/lazywithclass/swaggins) [![dev dependencies](https://david-dm.org/lazywithclass/swaggins/dev-status.svg)](https://david-dm.org/lazywithclass/swaggins#info=devDependencies) [![peer dependencies](https://david-dm.org/lazywithclass/swaggins/peer-status.svg)](https://david-dm.org/lazywithclass/swaggins#info=peerDependencies)
 
